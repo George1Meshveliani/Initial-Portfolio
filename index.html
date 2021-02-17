@@ -1,0 +1,562 @@
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+  crossorigin="anonymous"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+    :root {
+  --main-white: #f0f0f0;
+  --main-red: rgb(0, 0, 255, 0.7);
+  --main-blue: #0800E2;
+  --main-gray: #5B7EE0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+#auto {
+  width: 500px;
+}
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 800px) {
+  .welcome-section > url{
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+
+
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Base styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1, h2 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 4.2rem;
+}
+
+h4 {
+  font-size: 3.2rem;
+}
+
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--main-red);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+}
+
+#bio {
+  text-align: center;
+  text-align: justify;
+  width: 50%;
+}
+
+.nav-list a:hover {
+  background: var(--main-blue);
+}
+/* Welcome section */
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+    background-image: linear-gradient(
+      115deg,
+      rgba(0, 0, 8, 0.8),
+      rgba(16, 16, 260, 0.7)
+    ),
+   url(https://scontent.ftbs5-1.fna.fbcdn.net/v/t31.0-0/p180x540/19402233_1534154133302616_788713011884661739_o.jpg?_nc_cat=100&_nc_sid=7aed08&_nc_eui2=AeH4UJvcxkBiC2pCNrjpR95irUZHbXBCOpKtRkdtcEI6kuuJGYWTWlQgjYgCKNI4N5AAvJcudDgIwLTt-cXCLkj3&_nc_ohc=9Bj0fD-ThsUAX_D_8bI&_nc_ht=scontent.ftbs5-1.fna&_nc_tp=6&oh=043fbdc92c39e0e46733af1ed935641a&oe=5F168A9E); 
+}
+
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 100;
+  font-style: italic;
+  color: var(--main-red);
+}
+
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 100;
+  font-style: italic;
+  color: red;
+}
+
+/* Projects section */
+
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--main-blue);
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--main-white);
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.project {
+  background: var(--main-gray);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 15pt;
+}
+
+.code {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+  color: #ff7f50;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15pt;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: var(--main-gray);
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background: var(--main-red);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(2px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background: var(--main-gray);
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+/* Footer */
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
+}
+
+footer > p {
+  margin: 2rem;
+}
+
+footer i {
+  vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.project-image:hover {
+  transform: translateY(-20px);
+}
+
+
+</style>
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="#welcome-section">About</a>
+    </li>
+    <li>
+      <a href="#projects">Work</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<section id="welcome-section" class="welcome-section">
+
+  <h1>George</h1> 
+  <h2>Meshveliani</h2>
+  <p id="bio"> I am a full stack web developer from Georgia. I have years of working experience in tech industry with my scientific background. Since COVID-19 changed our lives and we did appreciate internet more I decided to direct all my intellectual resources to the web development. Here you can see results.</p>
+</section>
+
+
+
+<section id="projects" class="projects-section">
+  <h4 class="projects-section-header">See my contributions:</h4>
+
+  <div class="projects-grid">
+    <a
+      href="https://omedia.dev/"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://scontent.ftbs5-1.fna.fbcdn.net/v/t1.0-9/65318098_10156700500364261_7498001240744263680_o.png?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeH4hjcGIvdiDAGnC70OmkbyL_kPEIT-Srov-Q8QhP5Kum0wh1QhZZTbJuFL4UNgJaMf3O-aIaCKFlADHAW2Ru30&_nc_ohc=WtHZNl0Z1_cAX82M6Fo&_nc_ht=scontent.ftbs5-1.fna&oh=999232c5d16f7cc8ff4975bc6825dc36&oe=6039A82B"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        omedia.dev
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+     <a
+      href="https://www.bitcamp.ge/"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://scontent.ftbs5-1.fna.fbcdn.net/v/t1.0-9/122340790_3770949732926569_5922584090976188010_o.jpg?_nc_cat=106&ccb=2&_nc_sid=825194&_nc_eui2=AeGLzZZUqPQcDfMF06DMbdWs31FnidJxnrTfUWeJ0nGetIpGx63Gc57x1BMmfs8Sm2Eyqm_i1mY31sfpBgIzrlyv&_nc_ohc=kHVsOt4toR0AX-Q7y0n&_nc_ht=scontent.ftbs5-1.fna&oh=4bb9cb642fee118a96203823daf7d653&oe=60398956"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        bitcamp.ge
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+    <a
+      href="https://www.f6s.com/interactiveglove"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://scontent.ftbs5-1.fna.fbcdn.net/v/t1.0-9/14142039_1766189920302771_6542099441498859211_n.png?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGfYEkQTZZFnO8YjdRpD9Hs62-qtAqEgA7rb6q0CoSADvuqP_EADOq2F6IbP6J2zvN2xSx-puwOEJpElnfWFKKi&_nc_ohc=sI6x4mCZjfQAX8rDVPt&_nc_ht=scontent.ftbs5-1.fna&oh=5b8375874b98e0682926b5d329c6d31b&oe=6039237F"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        InGlove
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+    
+  </div>
+</section>
+
+<section id="projects" class="projects-section">
+  <h4 class="projects-section-header">Study projects:</h4>
+
+  <div class="projects-grid">
+    <a
+      href="https://codepen.io/george1meshveliani/full/gOaNEgM"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://scontent.ftbs5-1.fna.fbcdn.net/v/t31.0-8/10658633_850071935044176_1986217426446573528_o.jpg?_nc_cat=104&ccb=2&_nc_sid=174925&_nc_eui2=AeH7Q2rFKkkn7o8RQsVnnIYhFyU4tjSUS04XJTi2NJRLThnoFDGE0a-79UAgMrk6KE_bDGgL-2kJA_tqtazx4E0x&_nc_ohc=2P3g__q0BzMAX-uLAwA&_nc_ht=scontent.ftbs5-1.fna&oh=09b82703f85338e98c428313cabc600e&oe=60398810"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        Tribute Page of Kakha Bendukidze
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+     <a
+      href="https://codepen.io/george1meshveliani/full/abvevGr"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://miro.medium.com/max/1896/1*wTrLHR0-vwxuexRyXyyjxw.jpeg"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        BitCamp Survey
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+    <a
+      href="https://codepen.io/george1meshveliani/full/ExVqLYB"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+        class="project-image"
+        src="https://cdn.worldvectorlogo.com/logos/kate.svg"
+        alt="project"
+      />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        Kate Shop
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+    
+  </div>
+
+  <a
+    href="https://codepen.io/george1meshveliani"
+    class="btn btn-show-all"
+    target="_blank"
+    >Show all<i class="fas fa-chevron-right"></i
+  ></a>
+</section>
+
+
+
+<section id="contact" class="contact-section">
+  <div class="contact-section-header">
+    <h2>Let's work together...</h2>
+    <p>Enjoy</p>
+  </div>
+  <div class="contact-links">
+    <a
+      href="https://www.facebook.com/george.meshveliani.1"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-facebook-square"></i> Facebook</a
+    >
+    <a
+      id="profile-link"
+      href="https://github.com/George1Meshveliani"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-github"></i> GitHub</a
+    >
+    
+    <a href="giorgi.meshveliani@gmail.com" class="btn contact-details"
+      ><i class="fas fa-at"></i> Send a mail</a
+    >
+    <a href="tel:+995-555-48-11-19" class="btn contact-details"
+      ><i class="fas fa-mobile-alt"></i> Call me</a
+    >
+  </div>
+</section>
